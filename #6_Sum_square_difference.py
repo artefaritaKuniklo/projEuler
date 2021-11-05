@@ -2,7 +2,7 @@
 
 a = []
 sum = 0
-for i in range(1000):
+for i in range(100):
     a.append(i+1)
 for ind_a, ax in enumerate(a):
     for ind_b, bx in enumerate(a):
