@@ -1,5 +1,5 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.217.4/containers/python-3
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.224.3/containers/python-3
 {
 	"name": "Python 3",
 	"build": {
@@ -11,7 +11,7 @@
 			// Use -bullseye variants on local on arm64/Apple Silicon.
 			"VARIANT": "3.10-bullseye",
 			// Options
-			"NODE_VERSION": "lts/*"
+			"NODE_VERSION": "none"
 		}
 	},
 
@@ -42,12 +42,10 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
-	// "postCreateCommand": "ssh-add $HOME/.ssh/github_rsa",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"containerUser": "vscode",
-	"runArgs": ["--userns=keep-id"],
+	"remoteUser": "vscode",
 	"features": {
-		"git": "os-provided",
+		"git": "os-provided"
 	}
 }

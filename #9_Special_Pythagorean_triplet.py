@@ -8,11 +8,14 @@
 
 import math
 
+min_a = math.floor(math.sqrt(1000000/3))
+max_a = math.ceil(math.sqrt(1000000))
 
-for a in list(range(1, 32)):
-    max_bc = math.ceil(math.sqrt(1000-math.pow(a, 2)))
-    for b in list(range(1, max_bc)):
-        max_c = math.ceil(math.sqrt(1000-math.pow(a, 2)-math.pow(b, 2)))
-        for c in list(range(1, max_c)):
-            if a*a+b*b+c*c == 1000:
-                print("%d %d %d" % (a, b, c))
+
+for a in list(range(math.floor(math.sqrt(1000000/3)), math.ceil(math.sqrt(1000000)))):
+    max_bc = 1000000 - math.pow(a, 2)
+    for b in list(range(math.floor(math.sqrt(max_bc/2)), math.ceil(math.sqrt(max_bc)))):
+        max_c = 1000000 - math.pow(a, 2) - math.pow(b, 2)
+        for c in list(range(1, math.ceil(math.sqrt(max_c)))):
+            if int(math.pow(a, 2) + math.pow(b, 2)+math.pow(c, 2)) == 1000000:
+                print(math.pow(a, 2) + math.pow(b, 2)+math.pow(c, 2))
